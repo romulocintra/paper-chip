@@ -58,10 +58,12 @@ Basic chip with single letter instead of an icon
         position: relative;
         color: var(--paper-chip-secondary-text-color, --paper-grey-600);
         @apply(--layout-vertical);
+        @apply(--paper-chip-main-container);
       }
       /* pressed state */
       :host([pressed]) .main-container {
         background-color: var(--paper-chip-pressed-background-color, --paper-grey-400);
+        @apply(--paper-chip-pressed-main-container);
       }
 
       .chip-container {
@@ -84,6 +86,7 @@ Basic chip with single letter instead of an icon
         @apply(--layout-horizontal);
         @apply(--layout-center);
         @apply(--layout-center-justified);
+        @apply(--paper-chip-icon-container);
       }
       .icon-container ::content .icon {
         width: 32px;
@@ -97,6 +100,7 @@ Basic chip with single letter instead of an icon
         background-color: var(--paper-chip-icon-background-color, --paper-grey-600);
         color: var(--paper-chip-icon-text-color, #fff);
         @apply(--layout-flex);
+        @apply(--paper-chip-icon-container-content-icon);
       }
       .icon-container ::content .icon svg {
         margin: 4px;
@@ -137,6 +141,7 @@ Basic chip with single letter instead of an icon
         margin-right: 4px;
         @apply(--layout-horizontal);
         @apply(--layout-center-center);
+        @apply(--paper-chip-remove-btn-container);
       }
       :host(:not([removable])) .remove-btn-container {
         display: none;
@@ -150,12 +155,14 @@ Basic chip with single letter instead of an icon
         color: var(--paper-chip-removebtn-icon-color, --paper-grey-300);
         @apply(--layout-horizontal);
         @apply(--layout-center-center);
+        @apply(--paper-chip-remove-btn);
       }
       .remove-btn iron-icon {
         padding: 2px;
         
         height: 16px;
         width: 16px;
+        @apply(--paper-chip-remove-btn-icon);
       }
     </style>
     <iron-a11y-keys keys="del" on-keys-pressed="remove"></iron-a11y-keys>
